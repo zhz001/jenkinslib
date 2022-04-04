@@ -60,7 +60,7 @@ pipeline {
                     script{ //填写运行代码
                         tools.PrintMes("npmbuild","green")
                         npmHome = tool "NPM"
-                        sh "${npmHome}/bin/gradle ${bulidShell}"
+                        sh "${npmHome}/bin/npm ${bulidShell}"
                         tools.PrintMes("npmbuild","green")
                         //println('bulid')
                     }
