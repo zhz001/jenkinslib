@@ -8,12 +8,23 @@ pipeline {
             }
     }
     stages {
-        stage('bulid') { //阶段名称
+        stage('mavenbulid') { //阶段名称
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
                         mavHome = tool "M2"
                         sh "${mavHome}/bin/mvn ${bulidShell}"
+                        println('bulid')
+                    }
+                }
+            }
+        }
+        stage('antbulid') { //阶段名称
+            steps { //步骤
+                timeout(5){
+                    script{ //填写运行代码
+                        antHome = tool "ANT"
+                        sh "${antHome}/bin/ant ${bulidShell}"
                         println('bulid')
                     }
                 }
