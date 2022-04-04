@@ -60,7 +60,7 @@ pipeline {
                     script{ //填写运行代码
                         tools.PrintMes("npmbuild","green")
                         npmHome = tool "NPM"
-                        sh "export NODE_HOME=${npmHome} && export PATH=\$NODE_HOME/bin:\PATH && ${npmHome}/bin/npm ${bulidShell}"
+                        sh "export NODE_HOME=${npmHome} && export PATH=\$NODE_HOME/bin:\$PATH && ${npmHome}/bin/npm ${bulidShell}"
                         tools.PrintMes("npmbuild","green")
                         //println('bulid')
                     }
