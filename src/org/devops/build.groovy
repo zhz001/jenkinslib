@@ -2,7 +2,7 @@ package org.devops
 
 
 //构建类型
-def Build(buildType,buildShell){
+def Build(buildType,bulidShell){
     def buildTools = ["mvn":"M2","ant":"ANT","gradle":"GRADLE","npm":"NPM"]
     
     
@@ -14,9 +14,9 @@ def Build(buildType,buildShell){
         sh  """ 
             export NODE_HOME=${buildHome} 
             export PATH=\$NODE_HOME/bin:\$PATH 
-            ${buildHome}/bin/${buildType} ${buildShell}"""
+            ${buildHome}/bin/${buildType} ${bulidShell}"""
     } else {
-        sh "${buildHome}/bin/${buildType}  ${buildShell}"
+        sh "${buildHome}/bin/${buildType}  ${bulidShell}"
     }
 }
 // package org.devops
