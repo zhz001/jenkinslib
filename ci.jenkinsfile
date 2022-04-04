@@ -12,7 +12,7 @@ pipeline {
                 timeout(5){
                     script{ //填写运行代码
                         mavHome = tool "M2"
-                        sh "${mavHome}/bin/mav -v"
+                        sh "${mavHome}/bin/mvn -v"
                         println('bulid')
                     }
                 }
