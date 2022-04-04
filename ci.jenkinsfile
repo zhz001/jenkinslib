@@ -27,10 +27,28 @@ pipeline {
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
-                        tools.PrintMes("antbulid","green")
-                        antHome = tool "ANT"
-                        sh "${antHome}/bin/ant ${bulidShell}"
-                        tools.PrintMes("antbulid","green")
+                        try{
+                            tools.PrintMes("antbulid","green")
+                            antHome = tool "ANT"
+                            sh "${antHome}/bin/ant ${bulidShell}"
+                            tools.PrintMes("antbulid","green")
+                            //println('bulid')
+                        }catch(e){
+                            println(e)
+                        }
+                                
+                    }
+                }
+            }
+        }
+        stage('gradle') { //阶段名称
+            steps { //步骤
+                timeout(5){
+                    script{ //填写运行代码
+                        tools.PrintMes("gradle","green")
+                        gradleHome = tool "ANT"
+                        sh "${gradleHome}/bin/gradle ${bulidShell}"
+                        tools.PrintMes("gradle","green")
                         //println('bulid')
                     }
                 }
