@@ -3,6 +3,7 @@
 
 def tools = new org.devops.tools()
 def build = new org.devops.build()
+// def build = new org.devops.build()
 String bulidShell = "${env.bulidShell}"
 String bulidType = "${env.bulidType}"
 pipeline {
