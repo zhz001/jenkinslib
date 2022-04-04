@@ -1,4 +1,6 @@
 #!groovy
+@Library('jenkinslib') _
+
 def tools = new org.devops.tools()
 String bulidShell = "${env.bulidShell}"
 pipeline {
