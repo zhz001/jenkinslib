@@ -3,7 +3,7 @@
 
 def tools = new org.devops.tools()
 def build = new org.devops.build()
-// def build = new org.devops.build()
+def deploy = new org.devops.deploy()
 String bulidShell = "${env.bulidShell}"
 String bulidType = "${env.bulidType}"
 pipeline {
@@ -20,8 +20,8 @@ pipeline {
                         tools.PrintMes("bulid","green")
 //                         mavHome = tool "M2"
 //                         sh "${mavHome}/bin/mvn ${bulidShell}"
-//                         build.Build(buildType,buildShell)
                         build.Build(buildType,bulidShell)
+                        deploy.SaltDeploy(host,func)
                         tools.PrintMes("mavenbulid","green")
                         //println('bulid')
                     }
