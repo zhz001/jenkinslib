@@ -6,6 +6,7 @@ def build = new org.devops.build()
 def deploy = new org.devops.deploy()
 String bulidShell = "${env.bulidShell}"
 String bulidType = "${env.bulidType}"
+String deployHosts = "${env.deployHosts}"
 pipeline {
     agent { 
         node { 
@@ -21,7 +22,7 @@ pipeline {
 //                         mavHome = tool "M2"
 //                         sh "${mavHome}/bin/mvn ${bulidShell}"
                         build.Build(buildType,bulidShell)
-                        deploy.SaltDeploy(host,func)
+                        deploy.SaltDeploy("${deployHosts}","test.ping")
                         tools.PrintMes("mavenbulid","green")
                         //println('bulid')
                     }
