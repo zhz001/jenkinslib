@@ -41,14 +41,27 @@ pipeline {
                 }
             }
         }
-        stage('gradle') { //阶段名称
+        stage('gradlebuild') { //阶段名称
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
                         tools.PrintMes("gradle","green")
-                        gradleHome = tool "ANT"
+                        gradleHome = tool "GRADLE"
                         sh "${gradleHome}/bin/gradle ${bulidShell}"
                         tools.PrintMes("gradle","green")
+                        //println('bulid')
+                    }
+                }
+            }
+        }
+        stage('npmbuild') { //阶段名称
+            steps { //步骤
+                timeout(5){
+                    script{ //填写运行代码
+                        tools.PrintMes("npmbuild","green")
+                        npmHome = tool "NPM"
+                        sh "${npmHome}/bin/gradle ${bulidShell}"
+                        tools.PrintMes("npmbuild","green")
                         //println('bulid')
                     }
                 }
