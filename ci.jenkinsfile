@@ -21,7 +21,7 @@ pipeline {
 //                         mavHome = tool "M2"
 //                         sh "${mavHome}/bin/mvn ${bulidShell}"
 //                         build.Build(buildType,buildShell)
-                        build.Build(buildType,buildShell)
+                        build.Build(buildType,bulidShell)
                         tools.PrintMes("mavenbulid","green")
                         //println('bulid')
                     }
