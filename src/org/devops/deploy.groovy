@@ -1,5 +1,5 @@
 package org.devops
 
-def saltDeploy(host.fun){
+def SaltDeploy(host.fun){
     sh "salt \"${hosts}\" ${func}"
 }
