@@ -3,7 +3,7 @@
 pipeline {
     agent { 
         node { 
-            label "main" //指定运行节点的标签或者名称 
+            label "master" //指定运行节点的标签或者名称 
             }
     }
     stages {
