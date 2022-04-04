@@ -1,5 +1,5 @@
 #!groovy
-
+def tools = new org.devops.tools()
 String bulidShell = "${env.bulidShell}"
 pipeline {
     agent { 
@@ -12,9 +12,11 @@ pipeline {
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
+                        tools.PrintMes("mavenbulid","green")
                         mavHome = tool "M2"
                         sh "${mavHome}/bin/mvn ${bulidShell}"
-                        println('bulid')
+                        tools.PrintMes("mavenbulid","green")
+                        //println('bulid')
                     }
                 }
             }
@@ -23,9 +25,11 @@ pipeline {
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
+                        tools.PrintMes("antbulid","green")
                         antHome = tool "ANT"
                         sh "${antHome}/bin/ant ${bulidShell}"
-                        println('bulid')
+                        tools.PrintMes("antbulid","green")
+                        //println('bulid')
                     }
                 }
             }
