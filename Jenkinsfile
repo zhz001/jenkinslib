@@ -25,8 +25,8 @@ pipeline {
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
-                        println('获取代码')
-                         tools.PrintMes("this is my lib!","red")
+                        //println('获取代码')
+                        tools.PrintMes("获取代码","green")
                     }
                 }
             }
@@ -37,7 +37,8 @@ pipeline {
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
-                        println('应用打包')
+                        //println('应用打包')
+                        tools.PrintMes("应用打包","green")
                     }
                 }
             }
@@ -49,9 +50,8 @@ pipeline {
             steps { //步骤
                 timeout(5){
                     script{ //填写运行代码
-                        println('代码扫描')
-
-                        tools.PrintMes("this is my lib!","green")
+                        //println('代码扫描')
+                        tools.PrintMes("代码扫描","green")
                     }
                 }
             }
