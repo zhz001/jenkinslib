@@ -22,7 +22,7 @@ pipeline {
 //                         mavHome = tool "M2"
 //                         sh "${mavHome}/bin/mvn ${bulidShell}"
                         build.Build(buildType,bulidShell)
-                        deploy.SaltDeploy("${deployHosts}","test.ping")
+                    //    deploy.SaltDeploy("${deployHosts}","test.ping")
                         deploy.AnsibleDeploy("${deployHosts}","-m ping")
                         tools.PrintMes("mavenbulid","green")
                         //println('bulid')
