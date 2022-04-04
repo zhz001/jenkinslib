@@ -1,5 +1,6 @@
 #!groovy
 
+String bulidShell = "${env.bulidShell}"
 pipeline {
     agent { 
         node { 
@@ -12,7 +13,7 @@ pipeline {
                 timeout(5){
                     script{ //填写运行代码
                         mavHome = tool "M2"
-                        sh "${mavHome}/bin/mvn -v"
+                        sh "${mavHome}/bin/mvn ${bulidShell}"
                         println('bulid')
                     }
                 }
