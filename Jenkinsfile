@@ -26,6 +26,7 @@ pipeline {
                 timeout(5){
                     script{ //填写运行代码
                         println('获取代码')
+                         tools.PrintMes("this is my lib!","red")
                     }
                 }
             }
@@ -50,7 +51,7 @@ pipeline {
                     script{ //填写运行代码
                         println('代码扫描')
 
-                        tools.PrintMes("this is my lib!")
+                        tools.PrintMes("this is my lib!","green")
                     }
                 }
             }
